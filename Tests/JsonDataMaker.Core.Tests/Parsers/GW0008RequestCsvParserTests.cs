@@ -1,5 +1,6 @@
 ﻿using BankVision.WebAPI.Models.GW0008.Request;
 using JsonDataMaker.Core.DomainObjects;
+using JsonDataMaker.Core.DomainObjects.Csv;
 using JsonDataMaker.Core.Parsers;
 using System.Collections.Generic;
 using System.IO;
@@ -24,12 +25,12 @@ namespace JsonDataMaker.Core.Tests.Parsers
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(csv.ToString()));
             var actual = target.Parse(stream);
 
-            var expected = new List<GW0008RequestObject>()
+            var expected = new List<Root<RequestMessageData>>()
             {
-                new GW0008RequestObject()
+                new Root<RequestMessageData>()
                 {
                     FileId = 1001,
-                    RequestMessageData = new RequestMessageData()
+                    Data = new RequestMessageData()
                     {
                         YokinkozaZandakashokai = new YokinkozaZandakashokai()
                         {
@@ -47,10 +48,10 @@ namespace JsonDataMaker.Core.Tests.Parsers
                         },
                     },
                 },
-                new GW0008RequestObject()
+                new Root<RequestMessageData>()
                 {
                     FileId = 1011,
-                    RequestMessageData = new RequestMessageData()
+                    Data = new RequestMessageData()
                     {
                         YokinkozaZandakashokai = new YokinkozaZandakashokai()
                         {
@@ -68,10 +69,10 @@ namespace JsonDataMaker.Core.Tests.Parsers
                         },
                     },
                 },
-                new GW0008RequestObject()
+                new Root<RequestMessageData>()
                 {
                     FileId = 1021,
-                    RequestMessageData = new RequestMessageData()
+                    Data = new RequestMessageData()
                     {
                         YokinkozaZandakashokai = new YokinkozaZandakashokai()
                         {
