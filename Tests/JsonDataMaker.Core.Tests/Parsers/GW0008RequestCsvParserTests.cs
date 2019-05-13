@@ -1,4 +1,5 @@
-﻿using JsonDataMaker.Core.DomainObjects;
+﻿using BankVision.WebAPI.Models.GW0008.Request;
+using JsonDataMaker.Core.DomainObjects;
 using JsonDataMaker.Core.Parsers;
 using System.Collections.Generic;
 using System.IO;
@@ -28,29 +29,65 @@ namespace JsonDataMaker.Core.Tests.Parsers
                 new GW0008RequestObject()
                 {
                     FileId = 1001,
-                    temban = 1002,
-                    kamokuCode = 1003,
-                    kozabango = 1004,
-                    kaburiKubun = 1005,
-                    keiyakushaId = 1006,
+                    RequestMessageData = new RequestMessageData()
+                    {
+                        YokinkozaZandakashokai = new YokinkozaZandakashokai()
+                        {
+                            ShokaiKomoku = new ShokaiKomoku()
+                            {
+                                temban = 1002,
+                                kamokuCode = 1003,
+                                kozabango = 1004,
+                                kaburiKubun = 1005,
+                            },
+                            KensaKomoku = new KensaKomoku()
+                            {
+                                keiyakushaId = 1006,
+                            },
+                        },
+                    },
                 },
                 new GW0008RequestObject()
                 {
                     FileId = 1011,
-                    temban = 1012,
-                    kamokuCode = 1013,
-                    kozabango = 1014,
-                    kaburiKubun = 1015,
-                    keiyakushaId = 1016,
+                    RequestMessageData = new RequestMessageData()
+                    {
+                        YokinkozaZandakashokai = new YokinkozaZandakashokai()
+                        {
+                            ShokaiKomoku = new ShokaiKomoku()
+                            {
+                                temban = 1012,
+                                kamokuCode = 1013,
+                                kozabango = 1014,
+                                kaburiKubun = 1015,
+                            },
+                            KensaKomoku = new KensaKomoku()
+                            {
+                                keiyakushaId = 1016,
+                            },
+                        },
+                    },
                 },
                 new GW0008RequestObject()
                 {
                     FileId = 1021,
-                    temban = 1022,
-                    kamokuCode = 1023,
-                    kozabango = 1024,
-                    kaburiKubun = 1025,
-                    keiyakushaId = 1026,
+                    RequestMessageData = new RequestMessageData()
+                    {
+                        YokinkozaZandakashokai = new YokinkozaZandakashokai()
+                        {
+                            ShokaiKomoku = new ShokaiKomoku()
+                            {
+                                temban = 1022,
+                                kamokuCode = 1023,
+                                kozabango = 1024,
+                                kaburiKubun = 1025,
+                            },
+                            KensaKomoku = new KensaKomoku()
+                            {
+                                keiyakushaId = 1026,
+                            },
+                        },
+                    },
                 },
             };
 
